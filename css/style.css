@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root{
+  --bgColor: #040b14;
+  --main: #149ddd;
+  --hover: #37b3ed;
+  --lightgrey: #a8a9b4;
+  --darkgrey: #6f7180;
+  --white: #fff;
+  --heading: #173b6c;
+  --bg-section: #F5F8FD;
+  --list: #272829;
+
+}
+/* ***********farmework*********** */
+body{
+  font-family: 'Open Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+a{
+  text-decoration: none;
+  color: var(--main);
+}
+
+section{
+  padding: 4rem 0;
+}
+section .title h2{
+  position: relative;
+  margin-bottom: 1.2rem;
+  color: var(--heading);
+}
+section .title h2::after{
+  content: "";
+  position: absolute;
+  display: block;
+  width: 3rem;
+  height: .2rem;
+  background-color: var(--main);
+  left: 0;
+  bottom: 0;
+}
+section .title p{
+  font-size: 1rem;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+body::-webkit-scrollbar-track {
+  box-shadow: 0px 0px 5px var(--darkgrey) inset;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--main);
+  border-end-end-radius: 5px;
+  border-end-start-radius: 5px;
+}
+
+/* ***********farmework*********** */
+
+/* ***********header*********** */
+#header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  transition: all ease-in-out 0.5s;
+  -webkit-transition: all ease-in-out 0.5s;
+  -moz-transition: all ease-in-out 0.5s;
+  -ms-transition: all ease-in-out 0.5s;
+  -o-transition: all ease-in-out 0.5s;
+  z-index: 9997;
+  background-color: var(--bgColor);
+  overflow-y: auto;
+  width: 20rem;
+}
+#header .profile img {
+  border: 8px solid #2c2f3f;
+}
+#header .profile .social-links a i {
+  width: 2rem;
+  height: 2rem;
+  transition: all 0.3s ;
+  -webkit-transition: all 0.3s ;
+  -moz-transition: all 0.3s ;
+  -ms-transition: all 0.3s ;
+  -o-transition: all 0.3s ;
+  background-color: #2c2f3f;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+#header .profile .social-links a i:hover{
+  background-color: var(--main);
+}
+/* ***********navbar*********** */
+.nav-menu a , .nav-menu a:focus{
+  color: var(--lightgrey);
+  font-size: 1rem;
+}
+.nav-menu a i, .nav-menu a:focus i{
+  font-size: 1.2rem;
+  color: var(--darkgrey);
+}
+.nav-menu a:hover , .nav-menu .active, .nav-menu .active:focus{
+  color: var(--white);
+}
+.nav-menu a:hover i , .nav-menu .active i, .nav-menu .active:focus i{
+  color: var(--main);
+}
+.copy p {
+  color: var(--white);
+}
+.copy p span {
+  color: var(--main);
+}
+/* ***********header*********** */
+
+/* *********** start hero *********** */
+#hero{
+  background-image: linear-gradient(to bottom, rgba(5, 13, 24, 0.3),rgba(5, 13, 24, 0.6)),url('../img/bg-hero.png') ;
+  background-size: cover;
+  position: center center;
+  height: 100vh;
+}
+#hero p span{
+  border-bottom: 3px solid var(--main);
+}
+/* *********** end hero *********** */
+/* *********** start main*********** */
+#main,#hero{
+  margin-left: 20rem;
+}
+@media (max-width: 767px) {
+  #header {
+    left: -350px;
+    /* display: none; */
+  }
+
+  #main,#hero {
+    margin-left: 0;
+  }
+}
+/* *********** start about*********** */
+.about .inner-title h2{
+  color: var(--main);
+}
+.about .inner-title p{
+  font-size: 1.2rem;
+}
+.about ul li {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.about ul li i{
+  color: var(--main);
+}
+/* *********** end about*********** */
+/* *********** start skills*********** */
+section.skills{
+  background-color: var(--bg-section);
+}
+.skills .progress-bar{
+  background-color: var(--main);
+}
+/* *********** end skills*********** */
+/* *********** strat resum*********** */
+.resume .resume-item{
+  border-left: 2px solid var(--main);
+  position: relative;
+}
+.resume .resume-item::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  left: -9px;
+  top: 0;
+  background: #fff;
+  border: 2px solid var(--main);
+}
+
+/* *********** end resum *********** */
+
+/* *********** strat contact *********** */
+.contact{
+  background-color: var(--bg-section);
+}
+.contact form {
+  background-color: var(--white);
+  box-shadow: 2px 2px 24px rgba(0, 0, 0, 0.12);
+}
+.contact form .btn{
+  background-color: var(--main);
+  color: var(--white);
+  transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+}
+.contact form .btn:hover{
+  background-color: var(--hover);
+}
+/* *********** end contact *********** */
+
+
+
+
+
+
+/* *********** end main*********** */
+
+
+
+/* ***********back to top button*********** */
+.back-to-top{
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 996;
+  background-color: var(--main);
+  width: 2rem;
+  height: 2rem;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  /* visibility: hidden; */
+}
+.back-to-top:hover{
+  background-color: var(--hover);
+}
+.back-to-top i{
+  color: var(--white);
+}
+.back-to-top.active{
+  visibility: visible;
+}
+/* ***********back to top button*********** */
