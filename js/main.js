@@ -39,13 +39,36 @@
   /**
    * nav active li
    */
+  let navbarlinks = document.querySelectorAll("#navbar .scrollto", true);
+  const navbarlinksActive = () => {
+    let position = window.scrollY + 200;
+    navbarlinks.forEach((navbarlink) => {
+      if (!navbarlink.hash) return;
+      let section = navbarlink.hash;
+      console.log(navbarlink.hash)
+      if (!section) return;
+      if (
+        position >= section.offsetTop &&
+        position <= (section.offsetTop + section.offsetHeight) 
+      ) {
+        navbarlink.classList.add("active");
+        console.log("added")
+      } else {
+        navbarlink.classList.remove("active");
+        console.log("deleted")
+      }
+    });
+  };
+  window.addEventListener("load", navbarlinksActive)
+  window.addEventListener("scroll",navbarlinksActive)
+  /*
   const sections = document.querySelectorAll("section");
   const navLis = document.querySelectorAll("nav ul li");
   window.onscroll = () => {
     let current = "";
     sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      if (scrollY >= sectionTop - 60) {
+      let position = window.scrollY + 200
+      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
         current = section.getAttribute("id");
       }
     });
@@ -56,27 +79,28 @@
       }
     });
   };
-  /**
-   * toogle icon, display the navbar 
   */
+  /**
+   * toogle icon, display the navbar
+   */
   let toggle = document.querySelector(".toggle-icon");
   let header = document.querySelector("#header");
   let main = document.querySelector("#main");
   let hero = document.querySelector("#hero");
   let close = document.querySelector(".toggle-icon-1");
 
-  toggle.addEventListener("click",()=>{
+  toggle.addEventListener("click", () => {
     header.style.left = "0rem";
     main.style.left = "20rem";
     hero.style.left = "20rem";
-    toggle.style.display= "none"
-    close.style.display= "inline-block"
+    toggle.style.display = "none";
+    close.style.display = "inline-block";
   });
-  close.addEventListener("click",()=>{
+  close.addEventListener("click", () => {
     header.style.left = "-20rem";
     main.style.left = "0rem";
     hero.style.left = "0rem";
-    close.style.display="none";
-    toggle.style.display= "inline-block"
+    close.style.display = "none";
+    toggle.style.display = "inline-block";
   });
 })();
