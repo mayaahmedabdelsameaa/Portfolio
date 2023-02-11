@@ -128,10 +128,10 @@ body::-webkit-scrollbar-track {
   font-size: 1.2rem;
   color: var(--darkgrey);
 }
-.nav-menu a:hover , .nav-menu .active, .nav-menu .active:focus{
+.nav-menu a:hover , .nav-menu .active a, .nav-menu .active a:focus{
   color: var(--white);
 }
-.nav-menu a:hover i , .nav-menu .active i, .nav-menu .active:focus i{
+.nav-menu a:hover i , .nav-menu .active a i, .nav-menu .active a:focus i{
   color: var(--main);
 }
 .copy p {
@@ -223,7 +223,7 @@ section.skills{
 /* *********** end resum *********** */
 
 /* *********** strat contact *********** */
-.contact{
+section.contact{
   background-color: var(--bg-section);
 }
 .contact form {
@@ -267,7 +267,7 @@ section.skills{
   -moz-transition: all 0.4s;
   -ms-transition: all 0.4s;
   -o-transition: all 0.4s;
-  /* visibility: hidden; */
+  display: none;
 }
 .back-to-top:hover{
   background-color: var(--hover);
@@ -276,6 +276,6 @@ section.skills{
   color: var(--white);
 }
 .back-to-top.active{
-  visibility: visible;
+  display: inline;
 }
 /* ***********back to top button*********** */

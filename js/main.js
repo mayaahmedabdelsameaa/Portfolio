@@ -14,6 +14,7 @@
       }
     }; // end of toggle active function
     window.addEventListener("load", toggleActive);
+    window.addEventListener("scroll", toggleActive)
   }
   /**
    * animation
@@ -30,7 +31,7 @@
    * hero section
    */
   let typed = new Typed(".typed", {
-    strings: ["Front-end Develpoer", "Freelancer"],
+    strings: ["Front-end Developer", "Freelancer"],
     typeSpeed: 100,
     backSpeed: 100,
     loop: true,
@@ -39,36 +40,17 @@
   /**
    * nav active li
    */
-  let navbarlinks = document.querySelectorAll("#navbar .scrollto", true);
-  const navbarlinksActive = () => {
-    let position = window.scrollY + 200;
-    navbarlinks.forEach((navbarlink) => {
-      if (!navbarlink.hash) return;
-      let section = navbarlink.hash;
-      console.log(navbarlink.hash)
-      if (!section) return;
-      if (
-        position >= section.offsetTop &&
-        position <= (section.offsetTop + section.offsetHeight) 
-      ) {
-        navbarlink.classList.add("active");
-        console.log("added")
-      } else {
-        navbarlink.classList.remove("active");
-        console.log("deleted")
-      }
-    });
-  };
-  window.addEventListener("load", navbarlinksActive)
-  window.addEventListener("scroll",navbarlinksActive)
-  /*
+
   const sections = document.querySelectorAll("section");
   const navLis = document.querySelectorAll("nav ul li");
   window.onscroll = () => {
     let current = "";
     sections.forEach((section) => {
-      let position = window.scrollY + 200
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+      let position = window.scrollY + 200;
+      if (
+        position >= section.offsetTop &&
+        position <= section.offsetTop + section.offsetHeight
+      ) {
         current = section.getAttribute("id");
       }
     });
@@ -79,7 +61,7 @@
       }
     });
   };
-  */
+
   /**
    * toogle icon, display the navbar
    */
@@ -103,4 +85,36 @@
     close.style.display = "none";
     toggle.style.display = "inline-block";
   });
+
+  // sending Email
+
+  // getting sender data
+  let senderEmail = document.getElementById("exampleInputEmail1");
+  let senderSubject = document.getElementById("exampleInputSubject");
+  let senderMessage = document.getElementById("exampleInputMessage");
+  // submit button 
+  let submit = document.getElementById("btn-submit");
+  submit.addEventListener("click",sendEmail);
+  function sendEmail(e){
+    let email = senderEmail.value,
+        subject = senderSubject.value,
+        message = senderMessage.value;
+    // console.log("containers",senderEmail,senderSubject, senderMessage);
+    // console.log("Data",email,subject, message);
+    if(email!='' && subject!='' && message!=''){
+      e.preventDefault();
+      Email.send({
+        SecureToken: "7d499b9e-7101-425b-923c-c8fe6fcaeac9",
+        To: "mayarahmed982@gmail.com",
+        From: `${email}`,
+        Subject: `${subject}`,
+        Body: `${message}`,
+      }).then(alert("congratulations your email has been sent"));
+    }else{
+      e.preventDefault();
+      alert("Enter all the data to be able to send the email");
+    }
+    
+  }
+
 })();
