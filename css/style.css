@@ -203,7 +203,21 @@ section.skills{
   background-color: var(--main);
 }
 /* *********** end skills*********** */
+/* *********** start projects*********** */
+.projects a{
+  color: var(--darkgrey);
+}
+.projects a:hover{
+  color: var(--lightgrey);
+}
+/* *********** end projects*********** */
+
+
+
 /* *********** strat resum*********** */
+section.resume{
+  background-color: var(--bg-section);
+}
 .resume .resume-item{
   border-left: 2px solid var(--main);
   position: relative;
@@ -223,9 +237,6 @@ section.skills{
 /* *********** end resum *********** */
 
 /* *********** strat contact *********** */
-section.contact{
-  background-color: var(--bg-section);
-}
 .contact form {
   background-color: var(--white);
   box-shadow: 2px 2px 24px rgba(0, 0, 0, 0.12);
@@ -277,5 +288,10 @@ section.contact{
 }
 .back-to-top.active{
   display: inline;
+}
+@media (min-width: 1025px) {
+  .back-to-top{
+    display: none;
+  }
 }
 /* ***********back to top button*********** */
