@@ -204,11 +204,13 @@ section.skills{
 }
 /* *********** end skills*********** */
 /* *********** start projects*********** */
-.projects a{
-  color: var(--darkgrey);
+section.projects a{
+  color: var(--main);
+  font-weight: bold;
+  word-wrap: break-word;
 }
 .projects a:hover{
-  color: var(--lightgrey);
+  color: var(--hover);
 }
 /* *********** end projects*********** */
 
