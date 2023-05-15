@@ -4,18 +4,18 @@
   /**
    * Back to top button
    */
-  let backtop = document.querySelector(".back-to-top");
-  if (backtop) {
-    const toggleActive = () => {
-      if (window.screenY > 100) {
-        backtop.classList.add("active");
-      } else {
-        backtop.classList.remove("active");
-      }
-    }; // end of toggle active function
-    window.addEventListener("load", toggleActive);
-    window.addEventListener("scroll", toggleActive)
-  }
+  const backToTopBtn = document.querySelector(".back-to-top");
+  window.addEventListener("scroll", function () {
+    const scrollPosition = window.pageYOffset;
+    const aboutSection = document.getElementById("about");
+    const aboutSectionPosition =
+      aboutSection.getBoundingClientRect().top + scrollPosition;
+    if (scrollPosition >= aboutSectionPosition) {
+      backToTopBtn.classList.add("show");
+    } else {
+      backToTopBtn.classList.remove("show");
+    }
+  });
   /**
    * animation
    */
@@ -92,16 +92,16 @@
   let senderEmail = document.getElementById("exampleInputEmail1");
   let senderSubject = document.getElementById("exampleInputSubject");
   let senderMessage = document.getElementById("exampleInputMessage");
-  // submit button 
+  // submit button
   let submit = document.getElementById("btn-submit");
-  submit.addEventListener("click",sendEmail);
-  function sendEmail(e){
+  submit.addEventListener("click", sendEmail);
+  function sendEmail(e) {
     let email = senderEmail.value,
-        subject = senderSubject.value,
-        message = senderMessage.value;
+      subject = senderSubject.value,
+      message = senderMessage.value;
     // console.log("containers",senderEmail,senderSubject, senderMessage);
     // console.log("Data",email,subject, message);
-    if(email!='' && subject!='' && message!=''){
+    if (email != "" && subject != "" && message != "") {
       e.preventDefault();
       Email.send({
         SecureToken: "7d499b9e-7101-425b-923c-c8fe6fcaeac9",
@@ -110,11 +110,9 @@
         Subject: `${subject}`,
         Body: `${message}`,
       }).then(alert("congratulations your email has been sent"));
-    }else{
+    } else {
       e.preventDefault();
       alert("Enter all the data to be able to send the email");
     }
-    
   }
-
 })();
