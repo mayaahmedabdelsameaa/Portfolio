@@ -21,7 +21,7 @@
    */
   window.addEventListener("load", () => {
     AOS.init({
-      duration: 1500,
+      duration: 1000,
       easing: "ease-in-out",
       once: true,
       mirror: false,
@@ -31,9 +31,10 @@
    * hero section
    */
   let typed = new Typed(".typed", {
-    strings: ["Front-end Developer", "Freelancer"],
+    strings: ["Full-stack Developer", ".Net full-stack Developer", "Freelancer"],
     typeSpeed: 100,
     backSpeed: 100,
+    backDelay: 500,
     loop: true,
   });
 
@@ -105,7 +106,7 @@
       e.preventDefault();
       Email.send({
         SecureToken: "7d499b9e-7101-425b-923c-c8fe6fcaeac9",
-        To: "mayarahmed982@gmail.com",
+        To: "",
         From: `${email}`,
         Subject: `${subject}`,
         Body: `${message}`,

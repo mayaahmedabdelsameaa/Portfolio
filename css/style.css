@@ -98,7 +98,6 @@ body::-webkit-scrollbar-track {
   width: 20rem;
 }
 main {
-  margin-top: 4rem;
   transition: all 0.3s ease;
 }
 #header .profile img {
