@@ -31,7 +31,7 @@
    * hero section
    */
   let typed = new Typed(".typed", {
-    strings: ["Full-stack Developer", ".Net full-stack Developer", "Freelancer"],
+    strings: ["Full-stack Developer", ".Net full-stack Developer", "Angular Developer", "Back-end .Net Developer", "Freelancer"],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 500,
